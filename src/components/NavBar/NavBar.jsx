@@ -8,6 +8,7 @@ import { NotificationMenu } from "./navigation/NotificationMenu";
 import { UserMenu } from "./navigation/UserMenu";
 import { MobileMenu } from "./navigation/MobileMenu";
 import { useState } from "react";
+import { ThemeToggle } from "./navigation/ThemeToggle";
 
 export default function Navigation({ activePage, onNavigate }) {
   const { language, toggleLanguage, t, isRTL } = useLanguage();
@@ -44,6 +45,10 @@ export default function Navigation({ activePage, onNavigate }) {
           </div>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle 
+              lightLabel={t('theme.switchToLight')} 
+              darkLabel={t('theme.switchToDark')} 
+            />
             <LanguageToggle language={language} onToggle={toggleLanguage} />
 
             <NotificationMenu
