@@ -217,7 +217,7 @@ export function Applications() {
       {/* HEADER */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <h1 className="text-gray-900 mb-2 text-[40px] font-bold">{t("apps.title")}</h1>
+        <h1 className="text-gray-900 mb-2 text-[32px] font-bold">{t("apps.title")}</h1>
         <p className="text-gray-600 text-base font-normal mb-10">{t("apps.subtitle")}</p>
 
         {/* QUICK SSO ACCESS */}
@@ -328,7 +328,7 @@ export function Applications() {
                   </div>
 
                   <div>
-                    <h2 className="text-gray-900 mb-1 text-[40px] font-bold">{app.name}</h2>
+                    <h2 className="text-gray-900 mb-1 text-[32px] font-bold">{app.name}</h2>
                     <p className="text-gray-600 text-bse font-normal">{app.description}</p>
                   </div>
                 </div>

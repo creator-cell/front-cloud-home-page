@@ -72,8 +72,12 @@ export default function Subscriptions() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-gray-900 mb-2 text-[40px] font-bold">{t("sub.title")}</h1>
-          <p className="text-gray-600 text-base font-normal">{t("sub.subtitle")}</p>
+          <h1 className="text-gray-900 mb-2 text-[32px] font-bold">
+            {t("sub.title")}
+          </h1>
+          <p className="text-gray-600 text-base font-normal">
+            {t("sub.subtitle")}
+          </p>
         </div>
 
         {/* Desktop Table Look (NO TABLES USED) */}
@@ -101,8 +105,12 @@ export default function Subscriptions() {
                       {sub.icon}
                     </div>
                     <div>
-                      <p className="text-gray-900 text-base font-medium">{sub.app}</p>
-                      <p className=" text-gray-500 text-base font-normal">{sub.price}</p>
+                      <p className="text-gray-900 text-base font-medium">
+                        {sub.app}
+                      </p>
+                      <p className=" text-gray-500 text-base font-normal">
+                        {sub.price}
+                      </p>
                     </div>
                   </div>
 
@@ -112,7 +120,9 @@ export default function Subscriptions() {
                   </div>
 
                   {/* Plan */}
-                  <div className="col-span-2 text-gray-900 text-base">{sub.plan}</div>
+                  <div className="col-span-2 text-gray-900 text-base">
+                    {sub.plan}
+                  </div>
 
                   {/* Renewal Date */}
                   <div className="col-span-3 flex items-center gap-2 text-gray-600 text-base font-normal">
@@ -249,53 +259,48 @@ export default function Subscriptions() {
           </>
         }
       >
-       {selectedSub && (
-  <div className="w-full">
+        {selectedSub && (
+          <div className="w-full">
+            {/* Subtitle */}
+            <p className="text-gray-600 text-base mb-4">
+              {modalType === "upgrade" &&
+                `Upgrade your ${selectedSub.app} subscription to a higher tier plan.`}
 
-    {/* Subtitle */}
-    <p className="text-gray-600 text-base mb-4">
-      {modalType === "upgrade" &&
-        `Upgrade your ${selectedSub.app} subscription to a higher tier plan.`}
+              {modalType === "downgrade" &&
+                `Downgrade your ${selectedSub.app} subscription to a lower tier plan.`}
 
-      {modalType === "downgrade" &&
-        `Downgrade your ${selectedSub.app} subscription to a lower tier plan.`}
+              {modalType === "cancel" &&
+                `Cancel your ${selectedSub.app} subscription.`}
+            </p>
 
-      {modalType === "cancel" &&
-        `Cancel your ${selectedSub.app} subscription.`}
-    </p>
+            {/* MAIN INNER CARD (this is what was missing) */}
+            <div className="w-full bg-white border border-gray-200 rounded-2xl p-5 flex items-center justify-between shadow-sm">
+              {/* Left section */}
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-xl">
+                  {selectedSub.icon}
+                </div>
 
-    {/* MAIN INNER CARD (this is what was missing) */}
-    <div className="w-full bg-white border border-gray-200 rounded-2xl p-5 flex items-center justify-between shadow-sm">
+                <div>
+                  <p className="text-gray-900 text-lg font-semibold">
+                    {selectedSub.app}
+                  </p>
+                  <p className="text-gray-500 text-sm">{selectedSub.plan}</p>
+                </div>
+              </div>
 
-      {/* Left section */}
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-xl">
-          {selectedSub.icon}
-        </div>
+              {/* Price */}
+              <div className="text-gray-900 text-lg font-semibold">
+                {selectedSub.price}
+              </div>
+            </div>
 
-        <div>
-          <p className="text-gray-900 text-lg font-semibold">
-            {selectedSub.app}
-          </p>
-          <p className="text-gray-500 text-sm">
-            {selectedSub.plan}
-          </p>
-        </div>
-      </div>
-
-      {/* Price */}
-      <div className="text-gray-900 text-lg font-semibold">
-        {selectedSub.price}
-      </div>
-    </div>
-
-    {/* Current Price Row */}
-    <p className="text-gray-500 text-sm mt-3">
-      <strong>Current Price:</strong> {selectedSub.price}
-    </p>
-  </div>
-)}
-
+            {/* Current Price Row */}
+            <p className="text-gray-500 text-sm mt-3">
+              <strong>Current Price:</strong> {selectedSub.price}
+            </p>
+          </div>
+        )}
       </Modal>
     </div>
   );

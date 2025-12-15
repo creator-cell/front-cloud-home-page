@@ -61,7 +61,7 @@ export default function Profile() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-gray-900 mb-2 font-bold text-[40px]">{t("profile.title")}</h1>
+          <h1 className="text-gray-900 mb-2 font-bold text-[32px]">{t("profile.title")}</h1>
           <p className="text-gray-600 text-base font-normal">{t("profile.subtitle")}</p>
         </div>
 
