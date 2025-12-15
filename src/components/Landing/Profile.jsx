@@ -57,12 +57,13 @@ export default function Profile() {
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(true);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-gray-900 mb-2 font-bold text-[32px]">{t("profile.title")}</h1>
-          <p className="text-gray-600 text-base font-normal">{t("profile.subtitle")}</p>
+          <h1 className="text-gray-900 mb-2 font-bold text-[32px] dark:text-white">{t("profile.title")}</h1>
+          <p className="text-gray-600 text-base font-normal dark:text-gray-400">{t("profile.subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -73,18 +74,18 @@ export default function Profile() {
                 <div className="w-24 h-24 rounded-full bg-linear-to-br from-[#6ECFFF] to-[#3B82F6] flex items-center justify-center mx-auto mb-4">
                   <span className="text-white text-3xl">JD</span>
                 </div>
-                <h3 className="text-gray-900 mb-1 text-2xl font-semibold">{name}</h3>
+                <h3 className="text-gray-900 mb-1 text-2xl font-semibold dark:text-white">{name}</h3>
                 <p className="text-sm text-gray-500">{email}</p>
               </div>
 
               <div className="space-y-4">
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500 mb-1">Member Since</p>
-                  <p className="text-gray-900 text-base font-normal">January 2024</p>
+                <div className="p-3 bg-gray-50 rounded-xl dark:bg-gray-900">
+                  <p className="text-sm text-gray-500 mb-1 dark:text-gray-400 ">Member Since</p>
+                  <p className="text-gray-900 text-base font-normal dark:text-white">January 2024</p>
                 </div>
 
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500 mb-1">Account Type</p>
+                <div className="p-3 bg-gray-50 rounded-xl dark:bg-gray-900">
+                  <p className="text-sm text-gray-500 mb-1 dark:text-gray-400">Account Type</p>
                   <Badge variant="info">Premium</Badge>
                 </div>
               </div>
@@ -95,7 +96,7 @@ export default function Profile() {
           <div className="lg:col-span-2 space-y-6">
             {/* Profile Info */}
             <Card className="p-6">
-              <h3 className="text-gray-900 mb-6 text-2xl font-semibold">{t("profile.info")}</h3>
+              <h3 className="text-gray-900 mb-6 text-2xl font-semibold dark:text-white">{t("profile.info")}</h3>
 
               <div className="space-y-4">
                 <Input
@@ -138,17 +139,17 @@ export default function Profile() {
 
             {/* Security */}
             <Card className="p-6">
-              <h3 className="text-gray-900 mb-6 text-2xl font-semibold">{t("profile.security")}</h3>
+              <h3 className="text-gray-900 mb-6 text-2xl font-semibold dark:text-white">{t("profile.security")}</h3>
 
               <div className="space-y-6">
                 {/* Password */}
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl dark:bg-gray-900">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-[#6ECFFF]/10 flex items-center justify-center">
                       <Lock className="w-5 h-5 text-[#6ECFFF]" />
                     </div>
                     <div>
-                      <p className="text-gray-900 mb-1">
+                      <p className="text-gray-900 mb-1 dark:text-white">
                         {t("profile.changePassword")}
                       </p>
                       <p className="text-sm text-gray-500">
@@ -162,13 +163,13 @@ export default function Profile() {
                 </div>
 
                 {/* Two Factor Auth */}
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl dark:bg-gray-900">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
                       <Shield className="w-5 h-5 text-green-500" />
                     </div>
                     <div>
-                      <p className="text-gray-900 mb-1">{t("profile.2fa")}</p>
+                      <p className="text-gray-900 mb-1 dark:text-white">{t("profile.2fa")}</p>
                       <p className="text-sm text-gray-500">
                         Extra layer of security
                       </p>
@@ -184,13 +185,13 @@ export default function Profile() {
 
             {/* Active Sessions */}
             <Card className="p-6">
-              <h3 className="text-gray-900 mb-6 text-2xl font-semibold">{t("profile.sessions")}</h3>
+              <h3 className="text-gray-900 mb-6 text-2xl font-semibold dark:text-white">{t("profile.sessions")}</h3>
 
               <div className="space-y-4">
                 {activeSessions.map((session) => (
                   <div
                     key={session.id}
-                    className="flex items-start justify-between p-4 bg-gray-50 rounded-xl"
+                    className="flex items-start justify-between p-4 bg-gray-50 rounded-xl dark:bg-gray-900"
                   >
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center">
@@ -203,7 +204,7 @@ export default function Profile() {
 
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          <p className="text-gray-900">{session.browser}</p>
+                          <p className="text-gray-900 dark:text-white">{session.browser}</p>
                           {session.current && (
                             <Badge variant="success">Current</Badge>
                           )}

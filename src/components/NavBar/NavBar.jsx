@@ -28,7 +28,7 @@ export default function Navigation({ activePage, onNavigate }) {
 
   return (
     <nav
-      className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm"
+      className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-900/50"
       dir={isRTL ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -49,15 +49,15 @@ export default function Dashboard({ onNavigate }) {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
-          <h1 className="text-[32px] font-bold text-gray-900 mb-2 flex items-center gap-2">
+          <h1 className="text-[32px] font-bold text-gray-900 mb-2 flex items-center gap-2 dark:text-white">
             {t("dashboard.welcome")}, {language === "en" ? "John" : "جون"}{" "}
             <Hand className="text-yellow-400  mt-2" />
           </h1>
-          <p className="text-gray-600 text-base font-normal">
+          <p className="text-gray-600 text-base font-normal dark:text-gray-400">
             {t("dashboard.subtitle")}
           </p>
         </div>
@@ -71,8 +71,8 @@ export default function Dashboard({ onNavigate }) {
               </div>
               <Badge variant="success">+12%</Badge>
             </div>
-            <h3 className="text-gray-900 mb-1 font-semibold text-2xl">3</h3>
-            <p className="text-gray-600 text-base font-normal">
+            <h3 className="text-gray-900 mb-1 font-semibold text-2xl dark:text-white">3</h3>
+            <p className="text-gray-600 text-base font-normal dark:text-gray-400">
               Active Subscriptions
             </p>
           </Card>
@@ -84,8 +84,8 @@ export default function Dashboard({ onNavigate }) {
               </div>
               <Badge variant="info">This month</Badge>
             </div>
-            <h3 className="text-gray-900 mb-1 font-semibold text-2xl">$299</h3>
-            <p className="text-gray-600 text-base font-normal">Monthly Spend</p>
+            <h3 className="text-gray-900 mb-1 font-semibold text-2xl dark:text-white">$299</h3>
+            <p className="text-gray-600 text-base font-normal dark:text-gray-400">Monthly Spend</p>
           </Card>
 
           <Card className="p-6">
@@ -95,17 +95,17 @@ export default function Dashboard({ onNavigate }) {
               </div>
               <Badge variant="default">Upcoming</Badge>
             </div>
-            <h3 className="text-gray-900 mb-1 font-semibold text-2xl">
+            <h3 className="text-gray-900 mb-1 font-semibold text-2xl dark:text-white">
               Jan 15
             </h3>
-            <p className="text-gray-600 text-base font-normal">Next Billing</p>
+            <p className="text-gray-600 text-base font-normal dark:text-gray-400">Next Billing</p>
           </Card>
         </div>
 
         {/* My Applications */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-gray-900 font-bold text-3xl">
+            <h2 className="text-gray-900 font-bold text-3xl dark:text-white">
               {t("dashboard.myApps")}
             </h2>
             <Button
@@ -128,27 +128,27 @@ export default function Dashboard({ onNavigate }) {
                   <Badge variant="success">{t("sub.active")}</Badge>
                 </div>
 
-                <h4 className="text-gray-900 mb-2 font-semibold text-xl">
+                <h4 className="text-gray-900 mb-2 font-semibold text-xl dark:text-white">
                   {app.name}
                 </h4>
-                <p className="text-base font-normal text-gray-600 mb-4">
+                <p className="text-base font-normal text-gray-600 mb-4 dark:text-gray-400">
                   {app.description}
                 </p>
 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center justify-between ">
-                    <span className="text-gray-500 text-base font-normal">
+                    <span className="text-gray-500 text-base font-normal dark:text-gray-400">
                       Plan:
                     </span>
-                    <span className="text-gray-900 text-base font-normal">
+                    <span className="text-gray-900 text-base font-normal dark:text-white">
                       {app.plan}
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-500 text-base font-normal">
+                    <span className="text-gray-500 text-base font-normal dark:text-gray-400">
                       Next Billing:
                     </span>
-                    <span className="text-gray-900 text-base font-normal">
+                    <span className="text-gray-900 text-base font-normal dark:text-white">
                       {app.nextBilling}
                     </span>
                   </div>
@@ -175,32 +175,32 @@ export default function Dashboard({ onNavigate }) {
 
         {/* Billing Summary */}
         <div>
-          <h2 className="text-gray-900 mb-6 text-3xl font-bold">
+          <h2 className="text-gray-900 mb-6 text-3xl font-bold dark:text-white">
             {t("dashboard.billing")}
           </h2>
           <Card className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div>
-                <p className="text-base font-normal text-gray-500 mb-1">
+                <p className="text-base font-normal text-gray-500 mb-1 dark:text-gray-400">
                   Current Period
                 </p>
-                <p className="text-gray-900 text-base font-normal">
+                <p className="text-gray-900 text-base font-normal dark:text-white">
                   Dec 1 - Dec 31
                 </p>
               </div>
 
               <div>
-                <p className="text-base font-normal text-gray-500 mb-1">
+                <p className="text-base font-normal text-gray-500 mb-1 dark:text-gray-400 ">
                   Amount Due
                 </p>
-                <p className="text-gray-900 text-base font-normal">$299.00</p>
+                <p className="text-gray-900 text-base font-normal dark:text-white">$299.00</p>
               </div>
 
               <div>
-                <p className="text-base font-normal text-gray-500 mb-1">
+                <p className="text-base font-normal text-gray-500 mb-1 dark:text-gray-400">
                   Payment Method
                 </p>
-                <p className="text-gray-900 text-base font-normal">
+                <p className="text-gray-900 text-base font-normal dark:text-white">
                   Visa •••• 4242
                 </p>
               </div>

@@ -8,7 +8,7 @@ export function Logo({ isRTL }) {
       </div>
 
       <div className="hidden md:block">
-        <h1 className="text-lg font-bold text-gray-900 whitespace-nowrap">
+        <h1 className="text-lg font-bold text-gray-900 whitespace-nowrap dark:text-white">
           Front Cloud Solutions
         </h1>
       </div>

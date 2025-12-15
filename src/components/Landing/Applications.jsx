@@ -15,7 +15,7 @@ import Card  from "../ui/Card";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 import { Toggle } from "../ui/Toggle";
-import  Modal  from "../ui/Modal";
+import  {Modal}  from "../ui/Modal";
 
 const applications = [
   {
@@ -213,12 +213,13 @@ export function Applications() {
   );
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+
       {/* HEADER */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <h1 className="text-gray-900 mb-2 text-[32px] font-bold">{t("apps.title")}</h1>
-        <p className="text-gray-600 text-base font-normal mb-10">{t("apps.subtitle")}</p>
+        <h1 className="text-gray-900 mb-2 text-[32px] font-bold dark:text-white">{t("apps.title")}</h1>
+        <p className="text-gray-600 text-base font-normal mb-10 dark:text-gray-400">{t("apps.subtitle")}</p>
 
         {/* QUICK SSO ACCESS */}
         {subscribedApps.length > 0 && (
@@ -229,8 +230,8 @@ export function Applications() {
                   <ExternalLink className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Quick SSO Access</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Quick SSO Access</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Access your subscribed applications instantly
                   </p>
                 </div>
@@ -242,14 +243,14 @@ export function Applications() {
                   return (
                     <div
                       key={app.id}
-                      className="bg-white rounded-xl p-4 flex items-center justify-between gap-4 hover:shadow-lg transition-shadow"
+                      className="bg-white rounded-xl p-4 flex items-center justify-between gap-4 hover:shadow-lg transition-shadow dark:bg-gray-800"
                     >
                       <div className="flex items-center gap-3 flex-1">
                         <div className="w-12 h-12 rounded-lg bg-linear-to-br from-[#6ECFFF] to-[#3B82F6] flex items-center justify-center text-xl">
                           {app.icon}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-semibold text-gray-900 truncate">
+                          <p className="text-sm font-semibold text-gray-900 truncate dark:text-white">
                             {app.name}
                           </p>
                           <p className="text-xs text-gray-500">
@@ -280,8 +281,8 @@ export function Applications() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900">Unlock Premium Features</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">Unlock Premium Features</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Upgrade to Enterprise plans and get advanced analytics, dedicated support,
                     API access, and more!
                   </p>
@@ -298,7 +299,7 @@ export function Applications() {
 
         {/* BILLING TOGGLE */}
         <div className="flex items-center justify-center gap-4 mb-12">
-          <span className={`text-sm ${billingPeriod === "monthly" ? "text-gray-900" : "text-gray-500"}`}>
+          <span className={`text-sm ${billingPeriod === "monthly" ? "text-gray-900 dark:text-white" : "text-gray-500"}`}>
             {t("apps.monthly")}
           </span>
 
@@ -307,7 +308,7 @@ export function Applications() {
             onChange={(checked) => setBillingPeriod(checked ? "yearly" : "monthly")}
           />
 
-          <span className={`text-sm ${billingPeriod === "yearly" ? "text-gray-900" : "text-gray-500"}`}>
+          <span className={`text-sm ${billingPeriod === "yearly" ? "text-gray-900 dark:text-white" : "text-gray-500"}`}>
             {t("apps.yearly")}
           </span>
 
@@ -328,8 +329,8 @@ export function Applications() {
                   </div>
 
                   <div>
-                    <h2 className="text-gray-900 mb-1 text-[32px] font-bold">{app.name}</h2>
-                    <p className="text-gray-600 text-bse font-normal">{app.description}</p>
+                    <h2 className="text-gray-900 mb-1 text-[32px] font-bold dark:text-white">{app.name}</h2>
+                    <p className="text-gray-600 text-bse font-normal dark:text-gray-400">{app.description}</p>
                   </div>
                 </div>
 
@@ -367,11 +368,11 @@ export function Applications() {
                         <div className="mb-6">
                           <div className="flex items-center gap-2 mb-2 text-[#6ECFFF]">
                             {plan.icon}
-                            <h4 className="text-gray-900 text-xl font-semibold">{plan.name}</h4>
+                            <h4 className="text-gray-900 text-xl font-semibold dark:text-white">{plan.name}</h4>
                           </div>
 
                           <div className="flex items-baseline gap-2">
-                            <span className="text-4xl font-bold text-gray-900">
+                            <span className="text-4xl font-bold text-gray-900 dark:text-white">
                               ${billingPeriod === "monthly" ? plan.price.monthly : plan.price.yearly}
                             </span>
                             <span className="text-gray-500">
@@ -388,7 +389,7 @@ export function Applications() {
 
                         <ul className="space-y-3 mb-8 grow">
                           {plan.features.map((feature, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                            <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
                               <Check className="w-5 h-5 text-[#6ECFFF] shrink-0 mt-0.5" />
                               <span>{feature}</span>
                             </li>
@@ -452,33 +453,33 @@ export function Applications() {
       >
         {selectedApp && selectedPlan && (
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               You are about to subscribe to{" "}
-              <strong className="text-gray-900">{selectedApp.name}</strong> -{" "}
+              <strong className="text-gray-900 dark:text-white">{selectedApp.name}</strong> -{" "}
               {selectedPlan.name} Plan
             </p>
 
-            <div className="p-4 bg-gray-50 rounded-xl space-y-3">
+            <div className="p-4 bg-gray-50 rounded-xl space-y-3 dark:bg-gray-900">
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">Application:</span>
-                <span className="text-gray-900 font-medium">{selectedApp.name}</span>
+                <span className="text-gray-600 dark:text-gray-400">Application:</span>
+                <span className="text-gray-900 font-medium dark:text-white">{selectedApp.name}</span>
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">Plan:</span>
-                <span className="text-gray-900 font-medium">{selectedPlan.name}</span>
+                <span className="text-gray-600 dark:text-gray-400">Plan:</span>
+                <span className="text-gray-900 font-medium dark:text-white">{selectedPlan.name}</span>
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">Billing:</span>
-                <span className="text-gray-900">
+                <span className="text-gray-600 dark:text-gray-400">Billing:</span>
+                <span className="text-gray-900 dark:text-white">
                   {billingPeriod === "monthly" ? "Monthly" : "Yearly"}
                 </span>
               </div>
 
-              <div className="pt-3 border-t border-gray-200">
+              <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-900 font-medium">Total Amount:</span>
+                  <span className="text-gray-900 font-medium dark:text-white">Total Amount:</span>
                   <span className="text-2xl font-bold text-[#6ECFFF]">
                     ${billingPeriod === "monthly"
                       ? selectedPlan.price.monthly
@@ -488,8 +489,8 @@ export function Applications() {
               </div>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-              <p className="text-sm text-blue-900">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 dark:bg-blue-900/20 dark:border-blue-800">
+              <p className="text-sm text-blue-900 dark:text-blue-300">
                 <strong>Note:</strong> You will be charged immediately upon confirmation.
                 You can cancel or change your plan anytime from the Subscriptions page.
               </p>
@@ -516,33 +517,33 @@ export function Applications() {
       >
         {selectedApp && selectedPlan && (
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               You are about to upgrade{" "}
-              <strong className="text-gray-900">{selectedApp.name}</strong> -{" "}
+              <strong className="text-gray-900 dark:text-white">{selectedApp.name}</strong> -{" "}
               {selectedPlan.name} Plan
             </p>
 
-            <div className="p-4 bg-gray-50 rounded-xl space-y-3">
+            <div className="p-4 bg-gray-50 rounded-xl space-y-3 dark:bg-gray-900">
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">Application:</span>
-                <span className="text-gray-900 font-medium">{selectedApp.name}</span>
+                <span className="text-gray-600 dark:text-gray-400">Application:</span>
+                <span className="text-gray-900 font-medium dark:text-white">{selectedApp.name}</span>
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">Plan:</span>
-                <span className="text-gray-900 font-medium">{selectedPlan.name}</span>
+                <span className="text-gray-600 dark:text-gray-400">Plan:</span>
+                <span className="text-gray-900 font-medium dark:text-white">{selectedPlan.name}</span>
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">Billing:</span>
-                <span className="text-gray-900">
+                <span className="text-gray-600 dark:text-gray-400">Billing:</span>
+                <span className="text-gray-900 dark:text-white">
                   {billingPeriod === "monthly" ? "Monthly" : "Yearly"}
                 </span>
               </div>
 
-              <div className="pt-3 border-t border-gray-200">
+              <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-900 font-medium">Total Amount:</span>
+                  <span className="text-gray-900 font-medium dark:text-white">Total Amount:</span>
                   <span className="text-2xl font-bold text-[#6ECFFF]">
                     ${billingPeriod === "monthly"
                       ? selectedPlan.price.monthly
@@ -552,8 +553,8 @@ export function Applications() {
               </div>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-              <p className="text-sm text-blue-900">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 dark:bg-blue-900/20 dark:border-blue-800">
+              <p className="text-sm text-blue-900 dark:text-blue-300">
                 <strong>Note:</strong> You will be charged immediately. You can change plans anytime.
               </p>
             </div>

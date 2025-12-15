@@ -8,7 +8,7 @@ import { Toggle } from "../ui/Toggle";
 import { Input } from "../ui/Input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ToastContainer } from "../ui/Toast"; 
+import { ToastContainer } from "../ui/Toast";
 import { Toast } from "../ui/Toast";
 
 export function LoginPage() {
@@ -41,10 +41,13 @@ export function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-sky-200 flex items-center justify-center p-4 relative">
-      <ToastContainer toasts={toasts} removeToast={(id) =>
-        setToasts((prev) => prev.filter((toast) => toast.id !== id))
-      } />
+    <div className="min-h-screen bg-sky-200 flex items-center justify-center p-4 relative dark:bg-linear-to-br dark:from-gray-900 dark:to-gray-800">
+      <ToastContainer
+        toasts={toasts}
+        removeToast={(id) =>
+          setToasts((prev) => prev.filter((toast) => toast.id !== id))
+        }
+      />
       {/* Theme + Language */}
       <div
         className={`absolute top-4 ${
@@ -54,7 +57,10 @@ export function LoginPage() {
         <button
           onClick={toggleTheme}
           className="p-3 rounded-xl bg-white/90 backdrop-blur-sm text-gray-700 
-          hover:bg-white transition-all shadow-lg hover:shadow-xl border border-gray-200/50"
+          hover:bg-white transition-all shadow-lg hover:shadow-xl border border-gray-200/50 dark:border-gray-700/50 dark:hover:bg-gray-800   dark:text-gray-200    dark:bg-gray-800/90"
+          title={
+            theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+          }
         >
           {theme === "light" ? (
             <Moon className="w-5 h-5" />
@@ -66,7 +72,9 @@ export function LoginPage() {
         <button
           onClick={toggleLanguage}
           className="p-3 rounded-xl bg-white/90 backdrop-blur-sm text-gray-700 
-          hover:bg-white transition-all shadow-lg hover:shadow-xl flex items-center gap-2 border border-gray-200/50"
+          hover:bg-white transition-all shadow-lg hover:shadow-xl flex items-center gap-2 border border-gray-200/50 dark:border-gray-700/50
+           dark:hover:bg-gray-800 dark:text-gray-200 dark:bg-gray-800/90 "
+          title={language === "en" ? "Switch to Arabic" : "Switch to English"}
         >
           <Globe className="w-5 h-5" />
           <span className="text-sm font-medium">
@@ -76,7 +84,7 @@ export function LoginPage() {
       </div>
 
       <div className="w-full max-w-md">
-        <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 animate-slide-in border border-white/20">
+        <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 animate-slide-in border border-white/20 dark:border-gray-700/50 dark:shadow-black/50 dark:bg-gray-800/95 ">
           <div className="flex justify-center mb-8">
             <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#6ECFFF] to-[#3B82F6] flex items-center justify-center shadow-xl">
               <span className="text-white font-bold text-2xl">FC</span>
@@ -84,10 +92,12 @@ export function LoginPage() {
           </div>
 
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2 dark:text-white">
               {t("login.title")}
             </h2>
-            <p className="text-base text-gray-600">{t("login.subtitle")}</p>
+            <p className="text-base text-gray-600 dark:text-gray-400">
+              {t("login.subtitle")}
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -117,7 +127,7 @@ export function LoginPage() {
                 onClick={() => setShowPassword(!showPassword)}
                 className={`absolute ${
                   isRTL ? "left-3" : "right-3"
-                } top-[42px] text-gray-400 hover:text-gray-600 transition-colors`}
+                } top-[42px] text-gray-400 hover:text-gray-600 transition-colors dark:hover:text-gray-300 `}
               >
                 {showPassword ? (
                   <EyeOff className="w-5 h-5" />
@@ -147,10 +157,10 @@ export function LoginPage() {
 
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
+                <div className="w-full border-t border-gray-300 dark:border-gray-600" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-gray-700 font-semibold">
+                <span className="px-4 bg-white text-gray-700 font-semibold dark:text-gray-300 dark:bg-gray-800">
                   {t("login.or")}
                 </span>
               </div>
@@ -162,7 +172,7 @@ export function LoginPage() {
           </form>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400  font-normal">
               © 2024 Front Cloud Solutions
             </p>
           </div>

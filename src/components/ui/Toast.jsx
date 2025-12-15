@@ -4,13 +4,19 @@ import React, { useEffect } from "react";
 import { CheckCircle, AlertCircle, Info, X } from "lucide-react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
-export function Toast({ type, message, onClose, duration = 5000 }) {
+export function Toast({
+  type,
+  message,
+  onClose,
+  duration = 5000,
+}) {
   const { isRTL } = useLanguage();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
     }, duration);
+
     return () => clearTimeout(timer);
   }, [duration, onClose]);
 
@@ -21,9 +27,12 @@ export function Toast({ type, message, onClose, duration = 5000 }) {
   };
 
   const styles = {
-    success: "bg-green-50 border-green-200 text-green-800",
-    error: "bg-red-50 border-red-200 text-red-800",
-    info: "bg-blue-50 border-blue-200 text-blue-800",
+    success:
+      "bg-green-50 border-green-200 text-green-800 dark:bg-green-900/30 dark:border-green-800 dark:text-green-400",
+    error:
+      "bg-red-50 border-red-200 text-red-800 dark:bg-red-900/30 dark:border-red-800 dark:text-red-400",
+    info:
+      "bg-blue-50 border-blue-200 text-blue-800 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-400",
   };
 
   return (
@@ -32,10 +41,12 @@ export function Toast({ type, message, onClose, duration = 5000 }) {
       dir={isRTL ? "rtl" : "ltr"}
     >
       {icons[type]}
+
       <p className="flex-1 text-sm">{message}</p>
+
       <button
         onClick={onClose}
-        className="p-1 hover:bg-black/10 rounded-lg transition-colors"
+        className="p-1 hover:bg-black/10 dark:hover:bg-white/10 rounded-lg transition-colors"
       >
         <X className="w-4 h-4" />
       </button>

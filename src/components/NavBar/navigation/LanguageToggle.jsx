@@ -5,7 +5,7 @@ export function LanguageToggle({ language, onToggle }) {
   return (
     <button
       onClick={onToggle}
-      className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all flex items-center gap-2"
+      className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all flex items-center gap-2 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
       title={language === "en" ? "Switch to Arabic" : "Switch to English"}
     >
       <Globe className="w-5 h-5" />

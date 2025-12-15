@@ -8,7 +8,7 @@ export function UserMenu({ onNavigate, labels }) {
   return (
     <Popover
       trigger={
-        <button className="flex items-center gap-2 p-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
+        <button className="flex items-center gap-2 p-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white ">
           <div className="w-8 h-8 rounded-full bg-linear-to-br from-[#6ECFFF] to-[#3B82F6] flex items-center justify-center">
             <User className="w-5 h-5 text-white" />
           </div>

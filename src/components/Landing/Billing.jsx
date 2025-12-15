@@ -13,7 +13,7 @@ import { useLanguage } from "../../contexts/LanguageContext";
 import Card from "../ui/Card";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
-import Modal from "../ui/Modal";
+import { Modal } from "../ui/Modal";
 import { Input } from "../ui/Input";
 import { Popover, PopoverItem, PopoverDivider } from "../ui/Popover";
 
@@ -70,18 +70,25 @@ export function Billing() {
   };
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-gray-900 mb-2 text-[32px] font-bold">{t("billing.title")}</h1>
-          <p className="text-gray-600 text-base font-normal">{t("billing.subtitle")}</p>
+          <h1 className="text-gray-900 mb-2 text-[32px] font-bold dark:text-white">
+            {t("billing.title")}
+          </h1>
+          <p className="text-gray-600 text-base font-normal dark:text-gray-400">
+            {t("billing.subtitle")}
+          </p>
         </div>
 
         {/* Payment Methods */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-gray-900 font-bold text-3xl">{t("billing.paymentMethod")}</h2>
+            <h2 className="text-gray-900 font-bold text-3xl dark:text-white">
+              {t("billing.paymentMethod")}
+            </h2>
             <Button
               variant="outline"
               size="sm"
@@ -120,7 +127,7 @@ export function Billing() {
                   </div>
 
                   <Popover
-                  popoverClass="!right-8 !top-7 translate-x-5"
+                    popoverClass="!right-8 !top-7 translate-x-5"
                     trigger={
                       <button className="p-2 hover:bg-white/10 rounded-lg transition-colors">
                         <MoreVertical className="w-5 h-5" />
@@ -145,14 +152,14 @@ export function Billing() {
 
             {/* Add Card Placeholder */}
             <Card
-              className="p-6 border-2 border-dashed border-gray-300 flex items-center justify-center cursor-pointer hover:border-[#6ECFFF] transition-colors"
+              className="p-6 border-2 border-dashed border-gray-300 flex items-center justify-center cursor-pointer hover:border-[#6ECFFF] transition-colors dark:border-gray-700"
               onClick={() => setShowAddPaymentModal(true)}
             >
               <div className="text-center">
-                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-3 dark:bg-gray-700">
                   <Plus className="w-6 h-6 text-gray-400" />
                 </div>
-                <p className="text-gray-600">{t("billing.addPayment")}</p>
+                <p className="text-gray-600 dark:text-gray-400">{t("billing.addPayment")}</p>
               </div>
             </Card>
           </div>
@@ -160,19 +167,21 @@ export function Billing() {
 
         {/* Invoices */}
         <div>
-          <h2 className="text-gray-900 mb-6 font-bold text-3xl">{t("billing.invoices")}</h2>
+          <h2 className="text-gray-900 mb-6 font-bold text-3xl dark:text-white">
+            {t("billing.invoices")}
+          </h2>
 
           {/* Desktop Table */}
           <div className="hidden md:block">
             <Card className="overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-gray-50 border-b border-gray-200">
+                  <thead className="bg-gray-50 border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
                     <tr>
                       <th
                         className={`px-6 py-4 ${
                           isRTL ? "text-right" : "text-left"
-                        } text-sm text-gray-600`}
+                        } text-sm text-gray-600 dark:text-gray-400`}
                       >
                         {t("billing.invoice")}
                       </th>
@@ -180,7 +189,7 @@ export function Billing() {
                       <th
                         className={`px-6 py-4 ${
                           isRTL ? "text-right" : "text-left"
-                        } text-sm text-gray-600`}
+                        } text-sm text-gray-600 dark:text-gray-400`}
                       >
                         {t("billing.date")}
                       </th>
@@ -188,7 +197,7 @@ export function Billing() {
                       <th
                         className={`px-6 py-4 ${
                           isRTL ? "text-right" : "text-left"
-                        } text-sm text-gray-600`}
+                        } text-sm text-gray-600 dark:text-gray-400`}
                       >
                         {t("billing.amount")}
                       </th>
@@ -196,7 +205,7 @@ export function Billing() {
                       <th
                         className={`px-6 py-4 ${
                           isRTL ? "text-right" : "text-left"
-                        } text-sm text-gray-600`}
+                        } text-sm text-gray-600 dark:text-gray-400`}
                       >
                         {t("sub.status")}
                       </th>
@@ -204,21 +213,33 @@ export function Billing() {
                       <th
                         className={`px-6 py-4 ${
                           isRTL ? "text-left" : "text-right"
-                        } text-sm text-gray-600`}
+                        } text-sm text-gray-600 dark:text-gray-400`}
                       >
                         {t("sub.actions")}
                       </th>
                     </tr>
                   </thead>
 
-                  <tbody className="divide-y divide-gray-200">
+                  <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                     {invoices.map((invoice) => (
-                      <tr key={invoice.id} className="hover:bg-gray-50">
-                        <td className="px-6 py-4">{invoice.id}</td>
+                      <tr key={invoice.id} className="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <td className="px-6 py-4">
+                          <p className="text-gray-900 dark:text-white">
+                            {invoice.id}
+                          </p>
+                        </td>
 
-                        <td className="px-6 py-4">{invoice.date}</td>
+                        <td className="px-6 py-4">
+                          <p className="text-gray-600 dark:text-gray-400">
+                            {invoice.date}
+                          </p>
+                        </td>
 
-                        <td className="px-6 py-4">{invoice.amount}</td>
+                        <td className="px-6 py-4 ">
+                          <p className="text-gray-900 dark:text-white">
+                            {invoice.amount}
+                          </p>
+                        </td>
 
                         <td className="px-6 py-4">
                           <Badge
@@ -258,7 +279,9 @@ export function Billing() {
               <Card key={invoice.id} className="p-4">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <p className="text-gray-900 mb-1">{invoice.id}</p>
+                    <p className="text-gray-900 mb-1 dark:text-white">
+                      {invoice.id}
+                    </p>
                     <p className="text-sm text-gray-500">{invoice.date}</p>
                   </div>
 
@@ -272,7 +295,9 @@ export function Billing() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <p className="text-xl text-gray-900">{invoice.amount}</p>
+                  <p className="text-xl text-gray-900 dark:text-white">
+                    {invoice.amount}
+                  </p>
 
                   <Button variant="outline" size="sm">
                     <Download className="w-4 h-4" />
