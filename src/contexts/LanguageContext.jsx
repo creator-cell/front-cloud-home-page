@@ -109,6 +109,30 @@ const translations = {
     "common.filter": "Filter",
     "common.all": "All",
     "common.loading": "Loading...",
+    // Footer
+    "footer.tagline":
+      "The most powerful AI content platform with access to OpenAI, Anthropic, Google, and Ollama in one subscription.",
+
+    "footer.product": "Product",
+
+    "footer.dashboard": "Dashboard",
+    "footer.applications": "Applications",
+    "footer.subscriptions": "Subscriptions",
+    "footer.billing": "Billing",
+    "footer.profile": "Profile",
+
+    "footer.rights": "© 2025 Front Cloud Creative. All rights reserved.",
+
+    "footer.language": "English",
+    "footer.status": "Status",
+    "footer.api": "API",
+    "footer.changelog": "Changelog",
+
+    "footer.newsletter.title": "Stay updated",
+    "footer.newsletter.desc":
+      "Get the latest updates about new features and AI improvements.",
+    "footer.newsletter.placeholder": "Enter your email",
+    "footer.newsletter.cta": "Subscribe",
   },
 
   ar: {
@@ -218,6 +242,30 @@ const translations = {
     "common.filter": "تصفية",
     "common.all": "الكل",
     "common.loading": "جاري التحميل...",
+    // Footer
+    "footer.tagline":
+      "أقوى منصة محتوى بالذكاء الاصطناعي مع وصول إلى OpenAI وAnthropic وGoogle وOllama باشتراك واحد.",
+
+    "footer.product": "المنتج",
+
+    "footer.dashboard": "ڈیش بورڈ",
+    "footer.applications": "ایپلی کیشنز",
+    "footer.subscriptions": "سبسکرپشنز",
+    "footer.billing": "بلنگ",
+    "footer.profile": "پروفائل",
+
+    "footer.rights": "© 2025 فرونت كلاود. جميع الحقوق محفوظة.",
+
+    "footer.language": "العربية",
+    "footer.status": "الحالة",
+    "footer.api": "واجهة API",
+    "footer.changelog": "سجل التغييرات",
+
+    "footer.newsletter.title": "ابقَ على اطلاع",
+    "footer.newsletter.desc":
+      "احصل على آخر التحديثات حول الميزات الجديدة وتحسينات الذكاء الاصطناعي.",
+    "footer.newsletter.placeholder": "أدخل بريدك الإلكتروني",
+    "footer.newsletter.cta": "اشترك",
   },
 };
 
