@@ -16,13 +16,13 @@ export function Logo({ isRTL }) {
         </h1>
       </div> */}
 
-      <Link href="/landingpage" className="flex items-center gap-2 shrink-0">
+      <Link href="/landingpage" className="flex items-center gap-1 shrink-0">
         <Image
           src="/logo2.png"
           alt="Front Cloud Logo"
-          width={40}
-          height={40}
-          className="shrink-0 min-w-5 min-h-5"
+          width={30}
+          height={30}
+          className="shrink-0 "
           priority
         />
 
@@ -33,8 +33,8 @@ export function Logo({ isRTL }) {
           //  priority
         /> */}
 
-        <div className="flex flex-col leading-tight">
-          <span className="text-[#0A0A0A] text-medium font-semibold dark:text-[#f2f6fa]">
+        <div className="flex flex-col leading-tight ">
+          <span className="text-[#0A0A0A] text-sm lg:text-base font-semibold dark:text-[#f2f6fa]">
             Front Cloud
           </span>
           {/* <span className="text-[0.70rem] text-[#64748B] text-medium font-normal dark:text-white">

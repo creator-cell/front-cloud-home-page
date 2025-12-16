@@ -64,37 +64,14 @@ export const Footer = ({ onNavigate }) => {
           />
         </div>
 
-        <div className="my-10 border-t border-slate-200 dark:border-white/10" />
-
-        {/* Bottom */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between text-sm">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center mt-5  md:justify-center text-sm">
           <p className="text-slate-500 dark:text-[#b7c4d6]">
             {t("footer.rights")}
           </p>
-
-          <div className="flex gap-6">
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 text-slate-500 hover:text-gray-900 dark:text-[#9fb1c9] dark:hover:text-white"
-            >
-              <Globe className="h-4 w-4" />
-              {t("footer.language")}
-            </button>
-
-            <span className="cursor-pointer hover:text-gray-900 dark:hover:text-white">
-              {t("footer.status")}
-            </span>
-            <span className="cursor-pointer hover:text-gray-900 dark:hover:text-white">
-              {t("footer.api")}
-            </span>
-            <span className="cursor-pointer hover:text-gray-900 dark:hover:text-white">
-              {t("footer.changelog")}
-            </span>
-          </div>
         </div>
+        {/*  */}
       </div>
-
-      
+ 
     </footer>
   );
 };
