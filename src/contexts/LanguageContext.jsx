@@ -121,7 +121,7 @@ const translations = {
     "footer.billing": "Billing",
     "footer.profile": "Profile",
 
-    "footer.rights": "© 2025 Front Cloud Creative. All rights reserved.",
+    "footer.rights": "© 2025 Front Cloud . All rights reserved.",
 
     "footer.language": "English",
     "footer.status": "Status",
@@ -254,7 +254,7 @@ const translations = {
     "footer.billing": "بلنگ",
     "footer.profile": "پروفائل",
 
-    "footer.rights": "© 2025 فرونت كلاود. جميع الحقوق محفوظة.",
+    "footer.rights": "© 2025 فرنٹ کلاؤڈ۔ جملہ حقوق محفوظ ہیں۔",
 
     "footer.language": "العربية",
     "footer.status": "الحالة",
