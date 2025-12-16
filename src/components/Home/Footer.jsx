@@ -94,29 +94,7 @@ export const Footer = ({ onNavigate }) => {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 pb-16">
-        <div className="flex flex-col gap-6 rounded-xl bg-white border border-slate-200 p-8 sm:flex-row sm:items-center sm:justify-between dark:bg-[#1c2f48] dark:border-white/10">
-          <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white">
-              {t("footer.newsletter.title")}
-            </h3>
-            <p className="text-sm text-slate-500 dark:text-[#9fb1c9]">
-              {t("footer.newsletter.desc")}
-            </p>
-          </div>
-
-          <div className="flex w-full max-w-md gap-3">
-            <input
-              type="email"
-              placeholder={t("footer.newsletter.placeholder")}
-              className="h-11 flex-1 rounded-md bg-slate-100 px-4 text-gray-900 placeholder-slate-400 outline-none dark:bg-[#0f1b2d] dark:text-white dark:placeholder-[#9fb1c9]"
-            />
-            <button className="h-11 rounded-md bg-sky-500 px-5 font-semibold text-white hover:bg-sky-400">
-              {t("footer.newsletter.cta")}
-            </button>
-          </div>
-        </div>
-      </div>
+      
     </footer>
   );
 };
